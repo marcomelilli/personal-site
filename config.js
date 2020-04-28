@@ -1,10 +1,10 @@
 'use strict';
 
 module.exports = {
-  url: 'https://lumen.netlify.com',
+  url: 'https://marcomelilli.com',
   pathPrefix: '/',
-  title: 'Blog by John Doe',
-  subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+  title: 'Blog by Marco Melilli',
+  subtitle: 'Web developer in Milan',
   copyright: '© All rights reserved.',
   disqusShortname: '',
   postsPerPage: 4,
@@ -27,7 +27,7 @@ module.exports = {
   author: {
     name: 'Marco Melilli',
     photo: '/photo.jpg',
-    bio: 'Web developer at Hpe. Working on side projects in my free time',
+    bio: 'Web developer at Hpe in Milan. Working on side projects in my free time',
     contacts: {
       email: 'marcomelilli92@gmail.com',
       facebook: '',
