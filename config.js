@@ -16,28 +16,28 @@ module.exports = {
       path: '/'
     },
     {
+      label: 'Projects',
+      path: '/pages/projects'
+    },
+    {
       label: 'About me',
       path: '/pages/about'
     },
-    {
-      label: 'Contact me',
-      path: '/pages/contacts'
-    }
   ],
   author: {
-    name: 'John Doe',
+    name: 'Marco Melilli',
     photo: '/photo.jpg',
-    bio: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+    bio: 'Web developer at Hpe. Working on side projects in my free time',
     contacts: {
-      email: '',
-      facebook: '#',
-      telegram: '#',
-      twitter: '#',
-      github: '#',
+      email: 'marcomelilli92@gmail.com',
+      facebook: '',
+      telegram: '',
+      twitter: 'https://twitter.com/marcomelilli',
+      github: 'https://github.com/marcomelilli',
       rss: '',
       vkontakte: '',
-      linkedin: '#',
-      instagram: '#',
+      linkedin: 'https://linkedin.com/in/marcomelilli',
+      instagram: '',
       line: '',
       gitlab: '',
       weibo: '',
