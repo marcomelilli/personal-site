@@ -24,8 +24,8 @@ const Layout = ({
   category
 }: Props) => {
   const { author, url } = useSiteMetadata();
-  const metaImage = socialImage != null ? socialImage : ( category ? ('https://og-image-kappa.now.sh/' + postTitle + '?images=https://marcomelilli.com/media/logos/'+category.toLowerCase()+'.svg') : author.photo);
-  const metaImageUrl = url + withPrefix(metaImage);
+  const metaImage = socialImage != null ? socialImage : ( category ? ("https://og-image-kappa.now.sh/" + postTitle + "?images=https://marcomelilli.com/media/logos/"+category.toLowerCase()+".svg") : author.photo);
+  const metaImageUrl = metaImage;
 
   return (
     <div className={styles.layout}>

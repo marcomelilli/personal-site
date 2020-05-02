@@ -1,6 +1,6 @@
 ---
 template: post
-title: Gatsby react helmet og meta tags are not recognized
+title: Gatsby open graph meta tags are not recognized
 slug: gatsby-react-helmet-og-meta-tags-are-not-recognized
 draft: false
 date: 2020-05-02T12:39:51.164Z
