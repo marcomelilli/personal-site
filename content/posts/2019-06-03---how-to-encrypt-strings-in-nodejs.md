@@ -2,11 +2,10 @@
 template: post
 slug: how-to-encrypt-strings-in-nodejs
 draft: false
-socialImage: /media/image-2.jpg
 title: How to encrypt strings in nodejs
 date: '2019-06-03T23:46:37.121Z'
 description: Two ways to encrypt strings in nodeJs
-category: Encryption
+category: NodeJs
 tags:
   - encryption
   - security

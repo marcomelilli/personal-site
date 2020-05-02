@@ -1,7 +1,6 @@
 ---
 title: "About me"
 template: "page"
-socialImage: "/media/image-2.jpg"
 ---
 
 My name is **Marco Melilli** and I'm a web and mobile **developer** with 4+ years of experience

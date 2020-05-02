@@ -2,7 +2,6 @@
 template: post
 slug: how-to-setup-a-firewall-with-ufw-on-debian
 draft: false
-socialImage: /media/42-line-bible.jpg
 title: How to setup a firewall with UFW on Debian
 date: '2019-04-03T22:40:32.169Z'
 description: How to setup a firewall with UFW on Debian

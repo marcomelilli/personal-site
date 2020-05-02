@@ -17,10 +17,11 @@ const Layout = ({
   children,
   title,
   description,
-  socialImage
+  socialImage,
+  category
 }: Props) => {
   const { author, url } = useSiteMetadata();
-  const metaImage = socialImage != null ? socialImage : author.photo;
+  const metaImage = socialImage != null ? socialImage : ('https://og-image-kappa.now.sh/' + title + '?images=https://marcomelilli.com/media/logos/'+category.toLowerCase());
   const metaImageUrl = url + withPrefix(metaImage);
 
   return (
