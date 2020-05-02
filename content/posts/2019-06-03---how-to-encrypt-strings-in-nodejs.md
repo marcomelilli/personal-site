@@ -1,15 +1,15 @@
 ---
-title: How to encrypt strings in nodejs
-date: "2019-06-03T23:46:37.121Z"
-template: "post"
+template: post
+slug: how-to-encrypt-strings-in-nodejs
 draft: false
-slug: "how-to-encrypt-strings-in-nodejs"
-category: "How to"
+socialImage: /media/image-2.jpg
+title: How to encrypt strings in nodejs
+date: '2019-06-03T23:46:37.121Z'
+description: Two ways to encrypt strings in nodeJs
+category: Encryption
 tags:
-  - "encryption"
-  - "security"
-description: "Two ways to encrypt strings in nodeJs"
-socialImage: "/media/image-2.jpg"
+  - encryption
+  - security
 ---
 
 In my projects I essentially find useful two ways to encrypt strings: **hash functions** one-way and one-way and **encryption-decryption** two-way :
