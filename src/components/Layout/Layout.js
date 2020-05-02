@@ -9,19 +9,22 @@ import styles from './Layout.module.scss';
 type Props = {
   children: ReactNode,
   title: string,
+  postTitle: string,
   description?: string,
-  socialImage? :string
+  socialImage? :string,
+  category? :string
 };
 
 const Layout = ({
   children,
   title,
+  postTitle,
   description,
   socialImage,
   category
 }: Props) => {
   const { author, url } = useSiteMetadata();
-  const metaImage = socialImage != null ? socialImage : ('https://og-image-kappa.now.sh/' + title + '?images=https://marcomelilli.com/media/logos/'+category.toLowerCase());
+  const metaImage = socialImage != null ? socialImage : ( category ? ('https://og-image-kappa.now.sh/' + postTitle + '?images=https://marcomelilli.com/media/logos/'+category.toLowerCase()+'.svg') : author.photo);
   const metaImageUrl = url + withPrefix(metaImage);
 
   return (

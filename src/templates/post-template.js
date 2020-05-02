@@ -19,7 +19,7 @@ const PostTemplate = ({ data }: Props) => {
   const metaDescription = postDescription !== null ? postDescription : siteSubtitle;
 
   return (
-    <Layout title={`${postTitle} - ${siteTitle}`} description={metaDescription} socialImage={socialImage} category={category}>
+    <Layout title={`${postTitle} - ${siteTitle}`} postTitle={postTitle} description={metaDescription} socialImage={socialImage} category={category}>
       <Post post={data.markdownRemark} />
     </Layout>
   );
@@ -40,6 +40,7 @@ export const query = graphql`
         tags
         title
         socialImage
+        category
       }
     }
   }
