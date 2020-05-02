@@ -6,7 +6,7 @@ socialImage: /media/42-line-bible.jpg
 title: How to setup a firewall with UFW on Debian
 date: '2019-04-03T22:40:32.169Z'
 description: How to setup a firewall with UFW on Debian
-category: How to
+category: VPS
 tags:
   - vps
   - debian
@@ -18,7 +18,7 @@ tags:
 **Installation**
 
 ```shell
-  apt-get install ufw
+  sudo apt-get install ufw
 ```
 
 **Setup**
@@ -30,7 +30,6 @@ tags:
   sudo ufw allow 80
   sudo ufw allow 443
   ```
-
 * Deny all other ports and allow outgoing connections:
 
   ```shell
@@ -42,13 +41,11 @@ tags:
   ```shell
   ufw delete allow 80
   ```
-
 * Before **enable** the firewall, remember to <b>allow connections from ssh port</b> if you are connecting remotely to your vps:
 
   ```shell
   sudo ufw enable
   ```
-
 * To verify the firewall is running you can use the command:
 
   ```shell
