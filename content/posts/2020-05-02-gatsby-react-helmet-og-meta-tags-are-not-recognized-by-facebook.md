@@ -14,27 +14,47 @@ tags:
 ---
 The plugin [gatsby-plugin-react-helmet](https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/) is helpful to generate `og` meta tags but I recently noticed that **facebook** and **twitter** stopped to recognize the meta tags in my site. Looking for a solution, I discovered that other people had the same issue and at the moment I'm writing this article there is an [open issue](https://github.com/gatsbyjs/gatsby/issues/22908) on github.
 
-The main problem is that this plugin put all the tags at the **bottom of the header** and in some projects, when **large style tag** being placed before the meta tags, Facebook does not always parse the `og`tags if they come too late in the head. So the easiest way to resolve the problem is prioritise Helmet tags in the `<head />`tag.\
+The main problem is that this plugin put all the tags at the **bottom of the header** and in some projects, when **large style tag** being placed before the meta tags, Facebook does not always parse the `og`tags if they come too late in the head. So the easiest way to resolve the problem is to prioritize Helmet tags in the `<head />` tag.
 
-An elegant workaround is propoed by **[Ciantic](https://github.com/Ciantic)** in this [issue](https://github.com/gatsbyjs/gatsby/issues/22206):
+An elegant workaround proposed by [ttstauss](https://github.com/ttstauss) and [Ciantic](https://github.com/Ciantic) in this [issue](https://github.com/gatsbyjs/gatsby/issues/22206):
 
 Create a `gatsby-ssr.js` in the root of your gatsbyjs project with the following content:
 
 ```
-var React = require("react");
+const React = require("react")
+const { Helmet } = require("react-helmet")
 
-// Hack, to reorder the helmet components as first in <head> tag
-export const onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) => {
-    const headComponents = getHeadComponents();
+exports.onRenderBody = (
+  { setHeadComponents, setHtmlAttributes, setBodyAttributes },
+  pluginOptions
+) => {
+  const helmet = Helmet.renderStatic()
+  setHtmlAttributes(helmet.htmlAttributes.toComponent())
+  setBodyAttributes(helmet.bodyAttributes.toComponent())
+  setHeadComponents([
+    helmet.title.toComponent(),
+    helmet.link.toComponent(),
+    helmet.meta.toComponent(),
+    helmet.noscript.toComponent(),
+    helmet.script.toComponent(),
+    helmet.style.toComponent(),
+  ])
+}
 
-    headComponents.sort((a, b) => {
-        if (a.props && a.props["data-react-helmet"]) {
-            return 0;
-        }
-        return 1;
-    });
-    replaceHeadComponents(headComponents);
-};
+exports.onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) => {
+  const headComponents = getHeadComponents()
+  headComponents.sort((x, y) => {
+    if (x.props && x.props["data-react-helmet"]) {
+      return -1
+    } else if (y.props && y.props["data-react-helmet"]) {
+      return 1
+    }
+    return 0
+  })
+  replaceHeadComponents(headComponents)
+}
 ```
 
 More info about Gatsby Server Rendering APIs and `OnPreRenderHTML`function [here](https://www.gatsbyjs.org/docs/ssr-apis/#onPreRenderHTML)
+
+Note: the content of *gatsby-ssr.js* worked for me only after `gatsby build` in production, not with the `gatsby develop` command
