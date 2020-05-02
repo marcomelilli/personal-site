@@ -5,7 +5,7 @@ slug: how-to-use-assymmetric-encryption-in-nodejs
 draft: true
 date: 2020-04-29T08:37:49.057Z
 description: 'Generate public and private key, and encrypt e decrypt strings'
-category: How to
+category: NodeJs
 tags:
   - encryption
 ---
