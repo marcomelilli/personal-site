@@ -1,13 +1,13 @@
 ---
 template: post
-title: How to determine if you are in the popup or inside a tab in chrome extension
+title: 'How to determine if you are inside the popup or inside a tab in '
 slug: chrome-extension-determine-if-inside-popup-or-tab
 draft: false
 date: 2020-05-03T13:23:11.402Z
 description: >-
   How to find out is the user is in the popup or in a tab to handle different
   actions
-category: ChromeExtension
+category: Chrome Extension
 tags:
   - chrome
 ---
