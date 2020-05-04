@@ -71,10 +71,10 @@ To **generate** private and public key we will use **openssl**:
     )
     return decrypted.toString('utf8')}
 
-  const enc = encrypt('hello', `public.pem`)
+  const enc = encrypt('hello', `<public.pem>`)
   console.log('enc', enc)
 
-  const dec = decrypt(enc, `private.pem`)
+  const dec = decrypt(enc, `<private.pem>`)
   console.log('dec', dec)
   ```
 * Now you can distribute the public key and use it also in client side. In **javascript** you can use [**JSEncrypt** ](https://www.npmjs.com/package/jsencrypt)library:
@@ -87,7 +87,6 @@ To **generate** private and public key we will use **openssl**:
   var text = 'test';
   var enc = crypt.encrypt(text);
   ```
-* references::
+* references:
 
   * [Asymmetric Encryption using Nodejs Crypto module](https://stackoverflow.com/questions/54087514/asymmetric-encryption-using-nodejs-crypto-module)
-  * [https://github.com/travist/jsencrypt](https://github.com/travist/jsencrypt "https\://github.com/travist/jsencrypt")
