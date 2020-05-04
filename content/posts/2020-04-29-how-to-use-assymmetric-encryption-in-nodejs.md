@@ -2,8 +2,8 @@
 template: post
 title: Asymmetric encryption in Nodejs
 slug: how-to-asymmetric-encryption-in-nodejs
-draft: true
-date: 2020-04-29T08:37:49.057Z
+draft: false
+date: 2020-05-04T18:00:00.000Z
 description: >-
   How to generate public and private key, and how to encrypt e decrypt using
   this keys
@@ -15,7 +15,7 @@ tags:
 
 In an asymmetric key encryption scheme, anyone can encrypt messages using the public key, but only the holder of the paired private key can decrypt. Security depends on the secrecy of the private key.
 
-![](/media/asymmetric-encryption.png)
+![asymmetric key cryptography](/media/asymmetric-encryption.png "asymmetric key cryptography")
 
 ## Generate private and public key
 
@@ -41,6 +41,9 @@ To **generate** private and public key we will use **openssl**:
   ```shell
   cat rsa_4096_pub.pem
   ```
+
+## How to use the keys in nodejs e javascript
+
 * To encrypt and decrypt in **nodejs**:
 
   ```javascript
@@ -74,7 +77,7 @@ To **generate** private and public key we will use **openssl**:
   const dec = decrypt(enc, `private.pem`)
   console.log('dec', dec)
   ```
-* To encrypt public key in **javascript**
+* Now you can distribute the public key and use it also in client side. In **javascript** you can use [**JSEncrypt** ](https://www.npmjs.com/package/jsencrypt)library:
 
   ```javascript
   var crypt = new JSEncrypt();
@@ -83,30 +86,6 @@ To **generate** private and public key we will use **openssl**:
 
   var text = 'test';
   var enc = crypt.encrypt(text);
-  ```
-* Alternative: to **generate** private and public key in nodejs:
-
-  ```javascript
-  const { writeFileSync } = require('fs')
-  const { generateKeyPairSync } = require('crypto')
-
-  function generateKeys() {
-    const { privateKey, publicKey } = generateKeyPairSync('rsa', {
-      modulusLength: 4096,
-      publicKeyEncoding: {
-        type: 'pkcs1',
-        format: 'pem',
-      },
-      privateKeyEncoding: {
-        type: 'pkcs1',
-        format: 'pem',
-        cipher: 'aes-256-cbc',
-        passphrase: '',
-      },
-    })
-
-    writeFileSync('private.pem', privateKey)
-    writeFileSync('public.pem', publicKey)}
   ```
 * references::
 
