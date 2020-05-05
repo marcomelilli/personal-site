@@ -23,8 +23,7 @@ To obtain the second image you need to configure the `og` tags in the section `<
 
 There are lots of Open Graph properties, but the most importants are:
 
-* **og:title** – The title of your object as it should appear within the graph, e.g., “My blog title
-* **og:type** – The type of your object, e.g., “video.movie”. Depending on the type you specify, other properties may also be required.
+* **og:title** – The title of your object as it should appear within the graph, e.g. “My blog title"
 * **og:image** – An image URL which should represent your object within the graph.
 * **og:url** – The canonical URL of your object that will be used as its permanent ID in the graph, e.g., “[m](http://www.imdb.com/title/tt0117500/)ysite.com/my-awesome-blog-post“
 
@@ -44,28 +43,32 @@ To use the service you need to self hosted your own version. You can follow the 
 3. Make some changes to configure your own version:
 
    * File `now.js`: if you want to use the Vercel free plan, you need to remove all the properties except `"rewrites"`
-   * File `api/_lib/parser.ts`: At row 61 you need 
+   * File `api/_lib/parser.ts`: At row 61 you need to find the following lines and remove them. This is a check that limits other sites to use your instance, infact it'll replace every custom image you'll pass in the params with the default one (the Vercel logo).
 
      ```javascript
      ... 
          if (!images[0].startsWith('https://assets.vercel.com/') && !images[0].startsWith('https://assets.zeit.co/')) {
+            images[0] = defaultImage;
+         }
      ...
      ```
 
-     and replace with your own domain if you want to limit the other people can use your self hosted version:
+     In my case I hosted all the images that I want to use (the programming logos) in my blog, so I decided to replace the condition with my **domain name:**
 
      ```javascript
       ... 
          if (!images[0].startsWith('https://marcomelilli.com/')) {`
       ... 
      ```
-   * In `api/_lib/parser.ts`: you can edit and restyle the card css as you wish.
-4. run `npm install -g now`
-5. Run locally with `now dev`and visit [localhost:3000](http://localhost:3000/) to test it. Eg: [localhost:3000](http://localhost:3000/)/my-title-example
+   * Finally in `api/_lib/parser.ts `you can edit and restyle the card as you wish (it's all html and css)
+4. Run `npm install -g now`
+5. Run locally with `now dev `and visit [localhost:3000](http://localhost:3000/) to test it. Eg: [localhost:3000](http://localhost:3000/)/my-title-example
 6. Deploy to the cloud by running `now`and you'll get a unique URL
 
 Now you can generate images using the following **url**:
 
 `https://<MY_UNIQUE_URL>.now.sh/my%20blog%20post%20title?images=https://url-logo.svg`
 
-## Integrate in a GatsbyJs blog
+## Integrate og-image in a GatsbyJs blog
+
+Coming soon...
