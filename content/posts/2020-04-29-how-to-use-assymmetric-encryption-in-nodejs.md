@@ -44,7 +44,9 @@ To **generate** private and public key we will use **openssl**:
 
 ## How to use the keys in nodejs e javascript
 
-* To encrypt and decrypt in **nodejs**:
+To encrypt and decrypt in **nodejs** we can use [crypto](https://www.npmjs.com/package/crypto-js):
+
+* Run: `npm install crypto-js` to install it, and you can use these following functions to encrypt and decrypt:
 
   ```javascript
   const crypto = require('crypto')
@@ -77,7 +79,9 @@ To **generate** private and public key we will use **openssl**:
   const dec = decrypt(enc, `<private.pem>`)
   console.log('dec', dec)
   ```
-* Now you can distribute the public key and use it also in client side. In **javascript** you can use [**JSEncrypt** ](https://www.npmjs.com/package/jsencrypt)library:
+* Now you can distribute the public key and use it also in client side. 
+
+  In **javascript** you can use [**JSEncrypt** ](https://www.npmjs.com/package/jsencrypt)library:
 
   ```javascript
   var crypt = new JSEncrypt();
