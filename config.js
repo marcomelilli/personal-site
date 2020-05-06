@@ -6,7 +6,7 @@ module.exports = {
   title: 'Blog by Marco Melilli',
   subtitle: 'Web developer in Milan',
   copyright: '© All rights reserved.',
-  disqusShortname: '',
+  disqusShortname: 'marcomelilli-com',
   postsPerPage: 4,
   googleAnalyticsId: 'UA-144243411-1',
   useKatex: false,
