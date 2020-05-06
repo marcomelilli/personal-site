@@ -3,7 +3,7 @@ template: post
 title: Generate dynamic open graph images for blog posts
 slug: generate-dynamic-open-graph-images-blog-post-title
 draft: false
-date: 2020-05-05T12:29:56.500Z
+date: 2020-05-06T16:00:56.500Z
 description: >-
   Learn how to generate social cards for Twitter, Facebook, Slack with the blog
   post title, using og-image service by Vercel. And how to integrate it in a
