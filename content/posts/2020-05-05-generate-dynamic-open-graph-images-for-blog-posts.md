@@ -8,7 +8,7 @@ description: >-
   Learn how to generate social cards for Twitter, Facebook, Slack with the blog
   post title, using og-image service by Vercel. And how to integrate it in a
   gatsbyjs blog.
-category: 'SEO, NodeJS'
+category: SEO
 tags:
   - web
   - social
