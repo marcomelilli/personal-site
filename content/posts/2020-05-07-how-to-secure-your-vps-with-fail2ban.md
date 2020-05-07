@@ -72,3 +72,20 @@ maxretry = 6
 
 ## Debian
 * `service fail2ban restart`
+
+# Check the Fal2Ban Status
+Use the following command to check the status of the Fail2Ban jails:
+* `fail2ban-client status`
+
+The result should be similar to this:
+
+```
+Status
+|- Number of jail: 1
+`- Jail list: sshd
+```
+
+# Unbanning an IP address
+In order to remove an IP address from the banned list, parameter IPADDRESS is set to appropriate IP which needs unbanning. The name "sshd" is the name of the jail, in this case the "sshd" jail that we configured above. The following command does the job:
+
+`fail2ban-client set sshd unbanip IPADDRESS`
