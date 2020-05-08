@@ -24,15 +24,18 @@ Fail2Ban **scans log** files and **bans IPs** that show the malicious signs (e.g
 
 * Update the system, install EPEL repository and Fail2Ban:
 
-  * `yum update && yum install epel-release`
-  * `yum install fail2ban`
-
+  ```shell
+    yum update && yum install epel-release
+    yum install fail2ban
+  ```
 ### Debian
 
 * Update the system and install Fail2Ban: 
 
-  * `apt-get update && apt-get upgrade -y`
-  * `sudo apt-get install fail2ban`
+   ```shell
+   apt-get update && apt-get upgrade -y
+   sudo apt-get install fail2ban
+   ````
 
 ## Configure
 
@@ -48,48 +51,59 @@ Fail2ban reads `.conf`configuration files first, then `.local` files override an
   ```
 * The most important info that you can configure are inside the section `sshd` :
 
-```editorconfig
-[sshd] 
-enabled = true
-# "bantime" is the number of seconds that a host is banned.
-bantime = 3600
-# ssh port
-port = 22
-# "maxretry" is the number of failures before a host get banned.
-maxretry = 6
-```
+   ```editorconfig
+   [sshd] 
+   enabled = true
+   # "bantime" is the number of seconds that a host is banned.
+   bantime = 3600
+   # ssh port
+   port = 22
+   # "maxretry" is the number of failures before a host get banned.
+   maxretry = 6
+   ```
 
 ## Running Fail2Ban service
 
 ### Centos
 
-* `systemctl enable fail2ban`
-* `systemctl start fail2ban`
+   ```shell
+   systemctl enable fail2ban
+   systemctl start fail2ban
+   ```
 
 ### Debian
 
-* `service fail2ban restart`
+   ```shell
+   service fail2ban restart
+   ```
 
 ## Check the Fail2Ban Status
 
 To check the status of the Fail2Ban jails:
 
-* `fail2ban-client status`
+   ```shell
+   fail2ban-client status
+   ```
 
 The result should be like this:
 
-```editorconfig
-Status
-|- Number of jail: 1
-`- Jail list: sshd
-```
+   ```editorconfig
+   Status
+   |- Number of jail: 1
+   `- Jail list: sshd
+   ```
 
 If you want to see banned IPs in sshd jail:
 
-`fail2ban-client status sshd`
+   ```
+   fail2ban-client status sshd
+   ```
 
 ## Ban/Unban manually an IP address
 
 In order to add/remove an IP address from the banned list use the following commands replacing IPADDRESS with the IP which needs unbanning, and the name "sshd" with name of the jail (in this case the "sshd" jail that we configured above):
 
-`fail2ban-client set sshd banip IPADDRESS` `fail2ban-client set sshd unbanip IPADDRESS`
+   ```
+   fail2ban-client set sshd banip IPADDRESS
+   fail2ban-client set sshd unbanip IPADDRESS
+   ```
