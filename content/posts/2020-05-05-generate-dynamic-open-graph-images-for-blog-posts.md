@@ -60,9 +60,9 @@ To use the service you need to self host your own version. You can follow the of
          if (!images[0].startsWith('https://marcomelilli.com/')) {`
       ... 
      ```
-   * Finally in `api/_lib/parser.ts `you can edit and restyle the card as you wish (it's all html and css)
+   * Finally in `api/_lib/parser.ts`you can edit and restyle the card as you wish (it's all html and css)
 4. Run `npm install -g now`
-5. Run locally with `now dev `and visit [localhost:3000](http://localhost:3000/) to test it. Eg: [localhost:3000](http://localhost:3000/)/my-title-example
+5. Run locally with `now dev`and visit [localhost:3000](http://localhost:3000/) to test it. Eg: [localhost:3000](http://localhost:3000/)/my-title-example
 6. Deploy to the cloud by running `now` and you'll get a unique URL
 
 Finally you can generate images using the following **url**:
@@ -110,3 +110,7 @@ In this example I put all my category images in the folder *media* in my site, a
 `https://<MY_UNIQUE_URL>.now.sh/" + postTitle + "?images=https://mysite.com/media/"+category.toLowerCase()+".svg`
 
 You are free to generate the images you want according to your needs.
+
+
+
+__Note__: If you did everithing correctly but still have __some issues__ with Facebook and Twitter preview, you can read [this article](https://marcomelilli.com/posts/gatsby-react-helmet-og-meta-tags-are-not-recognized) about how I fixed an annoying problem with gatsby-plugin-react-helmet
