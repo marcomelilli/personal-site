@@ -14,9 +14,9 @@ tags:
   - centos
   - ssh
 ---
-When you configure a new server **Fail2ban** is a *must*-*have* tool to secure your VPS. 
+When you configure a new server **Fail2ban** is a *must*-*have* tool to secure your [VPS](https://marcomelilli.com/category/vps/). 
 
-Fail2Ban **scans log** files and **bans IPs** that show the malicious signs (e.g. too many password failures, seeking for exploits, etc..). This tool update your firewall rules to reject the IP addresses for a specified **amount of time**, although any arbitrary other **action**(e.g. sending an email) could also be configured.
+Fail2Ban **scans log** files and **bans IPs** that show the malicious signs (e.g. too many password failures, seeking for exploits, etc..). This tool update your firewall rules to reject the IP addresses for a specified **amount of time**, although any arbitrary other **action** (e.g. sending an email) could also be configured.
 
 # **How to install**
 
@@ -67,17 +67,21 @@ maxretry = 6
 # Running Fail2Ban service
 
 ## Centos
+
 * `systemctl enable fail2ban`
 * `systemctl start fail2ban`
 
 ## Debian
+
 * `service fail2ban restart`
 
-# Check the Fal2Ban Status
-Use the following command to check the status of the Fail2Ban jails:
-* `fail2ban-client status`
+# Check the Fail2Ban Status
 
-The result should be similar to this:
+To check the status of the Fail2Ban jails:
+
+* `fail2ban-client status`
+
+The result should be like this:
 
 ```
 Status
@@ -86,6 +90,7 @@ Status
 ```
 
 # Unbanning an IP address
-In order to remove an IP address from the banned list, parameter IPADDRESS is set to appropriate IP which needs unbanning. The name "sshd" is the name of the jail, in this case the "sshd" jail that we configured above. The following command does the job:
+
+In order to remove an IP address from the banned list use the following command replacing IPADDRESS with the IP which needs unbanning, and the name "sshd" with name of the jail (in this case the "sshd" jail that we configured above):
 
 `fail2ban-client set sshd unbanip IPADDRESS`
