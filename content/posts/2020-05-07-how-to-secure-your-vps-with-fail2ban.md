@@ -2,7 +2,7 @@
 template: post
 title: How to secure your VPS with Fail2ban
 slug: how-to-install-and-configure-fail2ban
-draft: true
+draft: false
 date: 2020-05-07T16:13:27.609Z
 description: >-
   How to install and configure Fail2ban on Centos and Debian to protect your
@@ -89,8 +89,13 @@ Status
 `- Jail list: sshd
 ```
 
-# Unbanning an IP address
+If you want to see banned IPs in sshd jail:
 
-In order to remove an IP address from the banned list use the following command replacing IPADDRESS with the IP which needs unbanning, and the name "sshd" with name of the jail (in this case the "sshd" jail that we configured above):
+`fail2ban-client status sshd`
 
+# Ban/Unban manually an IP address
+
+In order to add/remove an IP address from the banned list use the following commands replacing IPADDRESS with the IP which needs unbanning, and the name "sshd" with name of the jail (in this case the "sshd" jail that we configured above):
+
+`fail2ban-client set sshd banip IPADDRESS`
 `fail2ban-client set sshd unbanip IPADDRESS`
