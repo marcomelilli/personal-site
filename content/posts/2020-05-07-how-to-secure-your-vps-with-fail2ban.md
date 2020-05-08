@@ -3,7 +3,7 @@ template: post
 title: How to secure your VPS with Fail2ban
 slug: how-to-install-and-configure-fail2ban
 draft: false
-date: 2020-05-07T16:13:27.609Z
+date: 2020-05-08T16:13:27.609Z
 description: >-
   How to install and configure Fail2ban on Centos and Debian to protect your
   virtual private server
@@ -18,23 +18,23 @@ When you configure a new server **Fail2ban** is a *must*-*have* tool to secure y
 
 Fail2Ban **scans log** files and **bans IPs** that show the malicious signs (e.g. too many password failures, seeking for exploits, etc..). This tool update your firewall rules to reject the IP addresses for a specified **amount of time**, although any arbitrary other **action** (e.g. sending an email) could also be configured.
 
-# **How to install**
+## **How to install**
 
-## Centos
+### Centos
 
 * Update the system, install EPEL repository and Fail2Ban:
 
   * `yum update && yum install epel-release`
   * `yum install fail2ban`
 
-## Debian
+### Debian
 
 * Update the system and install Fail2Ban: 
 
   * `apt-get update && apt-get upgrade -y`
   * `sudo apt-get install fail2ban`
 
-# Configure
+## Configure
 
 Fail2ban reads `.conf`configuration files first, then `.local` files override any settings. So the best way is edit the local configuration to override the defailt settings.
 
@@ -42,18 +42,13 @@ Fail2ban reads `.conf`configuration files first, then `.local` files override an
   `cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local`
 * If using **CentOS** change the **backend** option in `jail.local` from *auto* to *systemd*. This is not necessary on **Debian:**
 
-  ```gitconfig
-  # "backend" specifies the backend used to get files modification.
+  ```editorconfig
   # Available options are "pyinotify", "gamin", "polling", "systemd" and "auto".
-  # This option can be overridden in each jail as well.
-
-  . . .
-
   backend = systemd
   ```
 * The most important info that you can configure are inside the section `sshd` :
 
-```gitconfig
+```editorconfig
 [sshd] 
 enabled = true
 # "bantime" is the number of seconds that a host is banned.
@@ -64,18 +59,18 @@ port = 22
 maxretry = 6
 ```
 
-# Running Fail2Ban service
+## Running Fail2Ban service
 
-## Centos
+### Centos
 
 * `systemctl enable fail2ban`
 * `systemctl start fail2ban`
 
-## Debian
+### Debian
 
 * `service fail2ban restart`
 
-# Check the Fail2Ban Status
+## Check the Fail2Ban Status
 
 To check the status of the Fail2Ban jails:
 
@@ -83,7 +78,7 @@ To check the status of the Fail2Ban jails:
 
 The result should be like this:
 
-```
+```editorconfig
 Status
 |- Number of jail: 1
 `- Jail list: sshd
@@ -93,9 +88,8 @@ If you want to see banned IPs in sshd jail:
 
 `fail2ban-client status sshd`
 
-# Ban/Unban manually an IP address
+## Ban/Unban manually an IP address
 
 In order to add/remove an IP address from the banned list use the following commands replacing IPADDRESS with the IP which needs unbanning, and the name "sshd" with name of the jail (in this case the "sshd" jail that we configured above):
 
-`fail2ban-client set sshd banip IPADDRESS`
-`fail2ban-client set sshd unbanip IPADDRESS`
+`fail2ban-client set sshd banip IPADDRESS` `fail2ban-client set sshd unbanip IPADDRESS`
