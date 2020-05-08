@@ -78,4 +78,8 @@ function decrypt(text){
 }
 ```
 
+## 3. Asymmetric encryption 
+
+If you want to use private and public key to encrypt your strings, you can follow [this article](https://marcomelilli.com/posts/how-to-asymmetric-encryption-in-nodejs).
+
 More info: [nodejs.org/api/crypto](https://nodejs.org/api/crypto.html)
