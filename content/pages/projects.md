@@ -11,12 +11,12 @@ This is the list of projects I developed in my free time:
 
 [Products Box](https://productsbox.dev) is a chrome extension that helps you to organize all your projects and products.
 
-<img src="https://productsbox.dev/static/hero-7143e2fd8d4c2afc707b110d04abb999.png"/> 
+<img src="https://productsbox.dev/static/hero-8a0e983317f844f1655eb1997efb2ec5.png"/> 
 
 You can add your projects and create 3 types of actions for every product:
 - **Navigation**: bookmarks to open new tabs
-- **Trigger**: to send http requests to webhooks (launch a build on netlify, a task on zapier, add a task log on makerlog, etc..)
-- **Views**: You can create a mini dashboard adding cards with important informations (number of users, revenue, etc..)
+- **Webhooks**: to send http requests to webhooks (launch a build on netlify, a task on zapier, add a task log on makerlog, etc..)
+- **Cards**: You can create a mini dashboard adding cards with important informations (number of users, revenue, etc..)
 
 It's was developed in [Reactjs](https://it.reactjs.org/), [Userbase](https://userbase.com) and [Firebase Cloud Functions](https://firebase.com)
 
