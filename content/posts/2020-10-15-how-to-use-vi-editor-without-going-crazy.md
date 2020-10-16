@@ -11,14 +11,12 @@ tags:
 ---
 Vi has two modes:
 
-* command mode
-* insert mode
+* **command** mode
+* **insert** mode
 
-In command mode, the letters of the keyboard perform editing functions (like moving the cursor, search, replace, copy and paste, etc..). In insert mode you can type the text like a classic editor. 
+In *command mode*, the letters of the keyboard perform editing functions (like moving the cursor, search, replace, copy and paste, etc..). In *insert mode* you can type the text like a classic editor. 
 
 These are the most importart commands to learn:
-
-
 
 **BASIC EDITING**
 
@@ -40,8 +38,6 @@ These are the most importart commands to learn:
  U         restore current line
 ```
 
-
-
 **SEARCH**
 
 ```
@@ -49,8 +45,6 @@ These are the most importart commands to learn:
  n         repeat last search in forward direction
  N         repeat last search in backward direction
 ```
-
-
 
 **ADVANCED EDITING**
 
@@ -67,8 +61,6 @@ These are the most importart commands to learn:
  J         join succeeding line to current cursor line
  nJ        join n succeeding lines to current cursor line
 ```
-
-
 
 **COPY AND PASTE**
 
@@ -88,8 +80,6 @@ p          paste after the cursor
 P          paste before the cursor
 ```
 
-
-
 **MOVING AROUND IN A FILE**
 
 ```
@@ -102,13 +92,11 @@ P          paste before the cursor
  L            to last line of screen
  G            to last line of file
  1G           to first line of file
- <Ctrl>f   scroll forward one screen
- <Ctrl>b   scroll backward one screen
- <Ctrl>d   scroll down one-half screen
- <Ctrl>u   scroll up one-half screen
+ <Ctrl>f      scroll forward one screen
+ <Ctrl>b      scroll backward one screen
+ <Ctrl>d      scroll down one-half screen
+ <Ctrl>u      scroll up one-half screen
 ```
-
-
 
 **CLOSING AND SAVING A FILE**
 
@@ -117,4 +105,3 @@ P          paste before the cursor
  :w            save file
  :q!           discard changes and quit file
 ```
-
