@@ -11,7 +11,7 @@ This is the list of projects I developed in my free time:
 
 [Products Box](https://productsbox.dev) is a chrome extension that helps you to organize all your projects and products.
 
-<img src="https://productsbox.dev/static/hero-8a0e983317f844f1655eb1997efb2ec5.png"/> 
+<img src="https://productsbox.dev/static/logo-6a24baa9faf55025db35aafd35d5a687.png"/> 
 
 You can add your projects and create 3 types of actions for every product:
 - **Navigation**: bookmarks to open new tabs
