@@ -3,7 +3,7 @@ template: page
 title: Projects
 socialImage: ''
 slug: projects
-draft: true
+draft: false
 ---
 This is the list of projects I developed in my free time:
 
